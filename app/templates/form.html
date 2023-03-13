@@ -1,39 +1,11 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block base_content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4">
-            <form class="form form-horizontal" action="" method="POST" novalidate>
-                {{ form.hidden_tag() }}
-                <p>
-                    {{ form.username.label }}
-                    {{ form.username(size=20) }}
-                    <br>
-                    {% if form.username.errors %}
-                    <ul class="errors">
-                    {% for error in form.username.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                    </ul>
-                    {% endif %}
-                </p>
-                <p>
-                    {{ form.email.label }}
-                    {{ form.email(size=20) }}
-                    <br>
-                    {% if form.email.errors %}
-                    <ul class="errors">
-                    {% for error in form.email.errors %}
-                    <li>{{ error }}</li>
-                    {% endfor %}
-                    </ul>
-                    {% endif %}
-                </p>
-                <p>
-                    {{ form.submit() }}
-                </p>
-            </form>
+        <div class="col-sm-2">
+            {{ wtf.quick_form(form) }}
         </div>
     </div>
 </div>

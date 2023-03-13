@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block base_content %}
+<div class="container-fluid">
+    <h4>Hello {{login}} {{email}}</h4>
+    <p><a href="{{url_for('index')}}" class="btn btn-primary">home</a></p>
+</div>
+{% endblock %}
